@@ -3,6 +3,7 @@ version: "3.8"
 services:
   app:
     container_name: eshop-client-react-dev
+#    image: 30e5a67b1a6a
     image: eshop-client-react-dev
     build:
       context: .
@@ -10,4 +11,4 @@ services:
     volumes:
       - ./src:/app/src
     ports:
-      - 3000:3000
+      - 3003:3003

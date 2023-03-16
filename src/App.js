@@ -1,7 +1,10 @@
 import './App.css';
 import logo from './images/logo.png'
 import Products from "./components/body/products";
-
+import optionIcon from "./images/toggle-icon.png";
+import flagUk from "./images/flag-uk.png"
+import footerLogo from "./images/footer-logo.png"
+import ProductsNoCarousel from "./components/body/products.no.carousel";
 function App() {
   function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
@@ -51,7 +54,9 @@ function App() {
                 <a href="electronic.html">Electronic</a>
                 <a href="jewellery.html">Jewellery</a>
               </div>
-              <span className="toggle_icon" onClick={openNav}><img src="images/toggle-icon.png"/></span>
+              <span className="toggle_icon" onClick={openNav}>
+                <img src={optionIcon}/>
+              </span>
               <div className="dropdown">
                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Category
                 </button>
@@ -75,7 +80,7 @@ function App() {
               <div className="header_box">
                 <div className="lang_box ">
                   <a href="#" title="Language" className="nav-link" data-toggle="dropdown" aria-expanded="true">
-                    <img src="images/flag-uk.png" alt="flag" className="mr-2 " title="United Kingdom"/> English <i className="fa fa-angle-down ml-2" aria-hidden="true"></i>
+                    <img src={flagUk} alt="flag" className="mr-2 " title="United Kingdom"/> English <i className="fa fa-angle-down ml-2" aria-hidden="true"></i>
                   </a>
                   <div className="dropdown-menu ">
                     <a href="#" className="dropdown-item">
@@ -143,6 +148,31 @@ function App() {
       </div>
 
       <Products />
+      <ProductsNoCarousel/>
+
+      <div className="footer_section layout_padding">
+        <div className="container">
+          <div className="footer_logo"><a href="index.html">
+            <img src={footerLogo}/>
+          </a></div>
+          <div className="input_bt">
+            <input type="text" className="mail_bt" placeholder="Your Email" name="Your Email"/>
+              <span className="subscribe_bt" id="basic-addon2">
+                <a href="#">Subscribe</a>
+              </span>
+          </div>
+          <div className="footer_menu">
+            <ul>
+              <li><a href="#">Best Sellers</a></li>
+              <li><a href="#">Gift Ideas</a></li>
+              <li><a href="#">New Releases</a></li>
+              <li><a href="#">Today's Deals</a></li>
+              <li><a href="#">Customer Service</a></li>
+            </ul>
+          </div>
+          <div className="location_main">Help Line Number : <a href="#">+1 1800 1200 1200</a></div>
+        </div>
+      </div>
     </>
   );
 }
